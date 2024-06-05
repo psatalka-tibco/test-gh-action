@@ -5,6 +5,9 @@ jobs:
   validatePR:
     runs-on: ubuntu-latest
     steps:
+      - name: npm install
+        run: |
+            npm install -ci
       - name: Enforce PR Rules
         uses: abhijitWakchaure/branch-name-enforcing-action@v1.0.1
         with:
