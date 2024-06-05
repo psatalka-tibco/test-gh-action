@@ -1,0 +1,16 @@
+name: "Enforce branch naming conventions for PR"
+on:
+  pull_request:
+jobs:
+  validatePR:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enforce PR Rules
+        uses: abhijitWakchaure/branch-name-enforcing-action@v1.0.1
+        with:
+          # The pattern to match release branches
+          release-branch-pattern: '^flogo-2.[\d]{2}.[\d]{1,2}(-hf[1-9]){0,1}$'
+          # The pattern to match feature branches
+          feature-branch-pattern: '^FLOGO-[\d]{4,5}(-[\-a-z0-9]*)$'
+          # Max length of branch name. 0 means no limit
+          max-length: '0'
