@@ -1,6 +1,7 @@
 name: "Enforce branch naming conventions for PR"
 on:
   pull_request:
+    types: [synchronize, opened, reopened, edited]
 jobs:
   validatePR:
     runs-on: ubuntu-latest
